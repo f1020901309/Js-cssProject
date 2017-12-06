@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3d模方</title>
+    <style>
+    body{
+    	background: #000;
+    }
+    .main {
+        width: 300px;
+        height: 300px;
+        margin: 100px auto;
+        position: relative;
+        transform-style: preserve-3d;
+        transform: rotateX(-30deg) rotateY(20deg) rotateZ(0deg);
+        /* animation: mofang 5s linear infinite; */
+    }
+	.main>div{
+		/*background: #fff;*/
+		width: 300px;
+        height: 300px;
+        position: absolute;
+	}
+    .div1 {
+        transform: translateZ(150px);
+    }
+    .div2 {
+        transform: rotateX(90deg) translateZ(150px);
+    }
+    .div3 {
+        transform: rotateX(270deg) translateZ(150px);
+    }
+    .div4 {
+        transform: rotateY(90deg) translateZ(150px);
+    }
+    .div5 {
+        transform: rotateY(270deg) translateZ(150px);
+    }
+    .div6 {
+        transform: translateZ(-150px) rotateY(180deg);
+    }
+    .main>div>div{
+    	width: 96px;
+        height: 96px;
+        border-radius: 10px;
+        float: left;
+        margin: 2px;
+    }
+    .div1>div {
+        background: red;   
+    }
+    .div2>div {
+        background: aqua;
+    }
+    .div3>div {
+        background: purple;
+    }
+    .div4>div {
+        background: gray;
+    }
+    .div5>div {
+        background: yellow;
+    }
+    .div6>div {
+        background: blue;
+    }
+	.main:hover{
+		animation: rotate 5s linear infinite;
+	}
+    @keyframes rotate {
+        100% {
+            transform: rotateX(-30deg) rotateY(380deg) rotateZ(0deg);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="div1">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="div2">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="div3">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="div4">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="div5">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="div6">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>

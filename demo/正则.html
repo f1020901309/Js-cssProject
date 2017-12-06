@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作业</title>
+	<style>
+		.content{
+			width:450px;
+			height: ;
+			margin: 0 auto;
+		}
+		.content>div{
+			width: 450px;
+			height: 40px;
+			margin-top: 30px;
+			text-align: center;
+		}
+		.content>div>input{
+			width: 200px;
+			height: 40px;
+		}
+		.content>div>span{
+			display: inline-block;
+			width: 100px;
+			line-height: 40px;
+			text-align: right;
+		}
+		#verificationCode{
+			width: 80px;
+		}
+		#outc{
+			display: inline-block;
+			width: 80px;
+			height: 46px;
+			line-height: 46px;
+			background: #7e7e7e;
+			vertical-align: top;
+			color: white;
+			text-align: center;
+			font-size: 20px;
+		}
+		button{
+			width: 60px;
+			height: 46px;
+			vertical-align: top;
+
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div>
+			<span>用户名：</span>
+			<input type="text" id="username" placeholder="4-16位字母、下划线、数字，首字必须为字母">
+			<span id="usert"></span>
+		</div>
+		<div>
+			<span>密码：</span>
+			<input type="password" id="password" placeholder="6-18位字母、下划线、数字">
+			<span id="passwordt"></span>
+		</div>
+		<div>
+			<span>确认密码：</span>
+			<input type="password" id="ready" placeholder="与密码输入一致">
+			<span id="readyt"></span>
+		</div>
+		<div>
+			<span>公司名称：</span>
+			<input type="text" id="company" placeholder="4-40位中英文、数字、'_'、'()'、'（）'">
+			<span id="companyt"></span>
+		</div>
+		<div>
+			<span>联系人姓名：</span>
+			<input type="text" id="name" placeholder="2-20位中英文">
+			<span id="namet"></span>
+		</div>
+		<div>
+			<span>联系人手机：</span>
+			<input type="text" id="phone">
+			<span id="phonet"></span>
+		</div>
+		<div>
+			<span>验证码：</span>
+			<input type="text" id="verificationCode">
+			<span id="outc"></span>
+			<button id="getc">换一换</button>
+			<span id="codet"></span>
+		</div>
+		<div>
+			<input type="submit" value="提交" id="btnsub">
+		</div>
+	</div>
+
+
+	<script>
+		function gbi(id){
+			return document.getElementById(id);
+		}
+		var outc=gbi("outc");
+		var getc=gbi("getc");
+		var btnsub=gbi("btnsub");
+		var str="1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+			var str1="";
+			var num=str.length;
+			for (var i = 0; i < 4; i++) {
+				var fi=Math.floor(Math.random()*num);
+				str1+=str.substring(fi,fi+1);
+			}
+			outc.innerHTML=str1;
+			getc.onmo
+		getc.onclick=function(){
+			var str1="";
+			var num=str.length;
+			for (var i = 0; i < 4; i++) {
+				var fi=Math.floor(Math.random()*num);
+				str1+=str.substring(fi,fi+1);
+			}
+			outc.innerHTML=str1;
+		}
+		gbi("username").onblur=function(){
+			var user=gbi("username").value;
+			var ruser=/^[a-zA-Z]\w{3,15}$/ig;
+			if(!ruser.test(user)){
+				gbi("usert").style.color="red";
+				gbi("usert").innerHTML="输入不合法！"
+			}
+			else{
+				gbi("usert").style.color="green";
+				gbi("usert").innerHTML="正确！"
+			}
+		}
+		gbi("password").onblur=function(){
+			var pwd=gbi("password").value;
+			var rpwd=/^\w{6,18}$/ig;
+			if(!rpwd.test(pwd)){
+				gbi("passwordt").style.color="red";
+				gbi("passwordt").innerHTML="输入不合法！"
+			}
+			else{
+				gbi("passwordt").style.color="green";
+				gbi("passwordt").innerHTML="正确！"
+			}
+		}
+		gbi("ready").onblur=function(){
+			var pwd=gbi("password").value;
+			var ready=gbi("ready").value;
+			if(ready!=pwd){
+				gbi("readyt").style.color="red";
+				gbi("readyt").innerHTML="输入不合法！"
+			}
+			else{
+				gbi("readyt").style.color="green";
+				gbi("readyt").innerHTML="正确！"
+			}
+		}
+		gbi("company").onblur=function(){
+			var comp=gbi("company").value;
+			var rcomp=/^[\u4E00-\u9FA5-()（）\w]{4,40}$/ig;
+			if(!rcomp.test(comp)){
+				gbi("companyt").style.color="red";
+				gbi("companyt").innerHTML="输入不合法！"
+			}
+			else{
+				gbi("companyt").style.color="green";
+				gbi("companyt").innerHTML="正确！"
+			}
+		}
+		gbi("name").onblur=function(){
+			var name=gbi("name").value;
+			var rname=/^[\u4E00-\u9FA5a-zA-Z]{2,20}$/ig;
+			if(!rname.test(name)){
+				gbi("namet").style.color="red";
+				gbi("namet").innerHTML="输入不合法！"
+			}
+			else{
+				gbi("namet").style.color="green";
+				gbi("namet").innerHTML="正确！"
+			}
+		}
+		gbi("phone").onblur=function(){
+			var phone=gbi("phone").value;
+			var rphone=/^1[3|4|5|7|8][0-9]{9}$/;
+			if(!rphone.test(phone)){
+				gbi("phonet").style.color="red";
+				gbi("phonet").innerHTML="输入不合法！"
+			}
+			else{
+				gbi("phonet").style.color="green";
+				gbi("phonet").innerHTML="正确！"
+			}
+		}
+		gbi("verificationCode").onblur=function(){
+			var code=gbi("verificationCode").value;
+			var rcode=gbi("outc").innerHTML;
+			if(code!=rcode){
+				gbi("codet").style.color="red";
+				gbi("codet").innerHTML="验证码错误！"
+			}
+			else{
+				gbi("codet").style.color="green";
+				gbi("codet").innerHTML="正确！"
+			}
+		}
+		btnsub.onclick=function(){
+			var user=gbi("username").value;
+			var pwd=gbi("password").value;
+			var ready=gbi("ready").value;
+			var comp=gbi("company").value;
+			var name=gbi("name").value;
+			var phone=gbi("phone").value;
+			var code=gbi("verificationCode").value;
+			var rcode=gbi("outc").innerHTML;
+
+			var ruser=/^[a-zA-Z]\w{3,15}$/ig;
+			var rpwd=/^\w{6,18}$/ig;
+			var rcomp=/^[\u4E00-\u9FA5-()（）\w]{4,40}$/ig;
+			var rname=/^[\u4E00-\u9FA5a-zA-Z]{2,20}$/ig;
+			var rphone=/^1[3|4|5|7|8][0-9]{9}$/;
+			if(!ruser.test(user)){
+				alert("用户名输入不合法！")
+			}
+			else if(!rpwd.test(pwd)){
+				alert("密码输入不合法！")
+			}
+			else if(ready!=pwd){
+				alert("密码输入不一致！")
+			}
+			else if(!rcomp.test(comp)){
+				alert("公司名输入不合法！")
+			}
+			else if(!rname.test(name)){
+				alert("联系人姓名输入不合法！")
+			}
+			else if(!rphone.test(phone)){
+				alert("联系人手机输入不合法！")
+			}
+			else if (code!=rcode) {
+				alert("验证码输入错误！")
+			}
+			else{
+				alert("提交成功!")
+			}
+
+		}
+		
+
+	</script>
+</body>
+</html>

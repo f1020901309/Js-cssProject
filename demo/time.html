@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>时间</title>
+	<style>
+		body{
+			/* background: black; */
+			text-align: center;
+			padding: 150px 0;
+		}
+		h1{
+			font-size: 50px;
+		}
+		p{
+			font-size: 30px;
+		}
+	</style>
+</head>
+<body onload="jixu()">
+	<h1>时间</h1>
+	<p id="riqi"></p>
+	<p id="shi"></p>
+	<script>
+		var riqi=document.getElementById("riqi");
+		var shi=document.getElementById("shi");
+		function jixu(){
+			var now=new Date();
+			var s=chuli(now.getHours());
+			var f=chuli(now.getMinutes());
+			var m=chuli(now.getSeconds());
+			var n=chuli(now.getFullYear());
+			var y=chuli(now.getMonth()+1);
+			var r=chuli(now.getDate());
+			riqi.innerHTML=n+"年"+y+"月"+r+"日";
+			shi.innerHTML=s+":"+f+":"+m;
+			setTimeout("jixu()",500);
+		}
+		function chuli(x){
+				if(x<10){
+					return "0"+x;
+				}
+				else{
+					return x;
+				}
+			}
+	</script>
+</body>
+</html>

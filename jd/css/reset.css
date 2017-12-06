@@ -1,0 +1,30 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+body{
+	min-width: 1190px;
+}
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
+.clear::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+a{
+	text-decoration: none;
+	color:#111;
+}
+ul{
+	list-style-type: none;
+}
+input{
+	font-family: normal;
+} 
+
+/*矢量图*/

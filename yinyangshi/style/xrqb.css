@@ -1,0 +1,288 @@
+        *{
+        	padding: 0;
+        	margin: 0;
+        }
+        .fl{
+	    	float: left;
+	    }
+	    .clear{
+	    	display: block;
+	    	clear: both;
+	    	content: "";
+	    }
+	    .kong{
+	    	background:url("../images/bg/bg_scene_fc9868d.jpg") no-repeat;
+	    	background-size: 100% 100%;
+	    	position:fixed;
+	    	top:0;
+	    	left:0;
+	        z-index: -100;
+	    	height: 700px;
+	    	width: 100%;
+	    }
+	    .firstPage{
+	    	background: url("../images/bg/bg.jpg");
+	    }
+	    .wave{
+	    	width: 100%;
+            height: 91px;
+            margin-top: 609px;
+            position:relative;
+	    }
+	    .wave div{
+	    	width: 100%;
+            height: 91px;
+            position:absolute;
+            top:0;
+            left:0;
+	    }
+	    .wave1{
+            background-image:url("../images/wave1.png");
+            background-position: 0 0;
+            background-size: 100% 100%;
+            animation:waves 300s linear infinite ;
+	    }
+	    .wave2{
+            background-image:url("../images/wave2.png");
+            background-position: 0 0;
+            background-size: 100% 100%;
+            animation:waves 300s linear infinite 2s;
+	    }
+	    .wave3{
+            background-image:url("../images/wave.png");
+            background-position: 0 0;
+            background-size: 100% 100%;
+            animation:waves 300s linear infinite 3s;
+	    }
+	    @keyframes waves{
+	    	0%{
+		    background-position: 0 0;
+	    	}
+	    	100%{
+		    background-position: 100000px 0;
+			
+	    	}
+	    }
+	    .tit{
+            text-align: center;
+            padding-top: 70px;
+	    }
+	    .txt img{
+            display: block;
+    		margin: auto;
+    		
+	    }
+	    #ul{
+           width: 1080px;
+           height: 684px;
+           margin: 70px auto 0;
+	    }
+	    #ul div{
+	    	width: 254px;
+	    	height: 317px;
+	    	margin-right: 105px;
+	    	margin-bottom: 25px;
+	    	float: left;
+	    	position:relative;
+	    }
+	    #ul div .i1{
+        	width: 95px;
+	    	height: 204px;
+	    	position:absolute;
+	    	top:30px;
+	    	left:0;
+        }
+        #ul div .j1{
+        	width: 273px;
+	    	height: 335px;
+	    	position:absolute;
+	    	top:-10px;
+	    	right:-65px;
+	    	transition: all .5s;
+        }
+        #ul div .j1:hover{
+        	right:-75px;
+        }
+	    #big{
+	    	display: none;
+	    	position: fixed;
+	    	width: 100%;
+	    	height: 100%;
+	    	opacity: .9;
+	    	background: black;
+	    	top: 0;
+	    	left: 0;
+	    }
+	    #big-box{
+            background: url("../images/bg_alert_5628e74.jpg") no-repeat 0 center;
+            width: 100%;
+            height: 400px;
+            margin-top: 100px;
+			transition:all .3s ease-in-out;
+
+	    }
+	    #able{
+	    	width: 100%;
+	    	height: 100%;
+	    	position: absolute;
+           top: 0;
+           left: 0;
+	    }
+		#odiv{
+           width: 1100px;
+           margin: 0 auto;
+           height: 100%;
+           
+           overflow:hidden;
+           transition: all .5s linear;
+           position: relative;
+           
+		}
+		#odiv>div{
+			width: 1100px;
+			height: 100%;
+			position: absolute;
+			display: none;
+			transition:all .3s ease-in-out;
+	    }
+		#odiv>div>img:nth-child(1){
+			width: 544px;
+			height: 762px;
+			top: -50px;
+			position:absolute;
+			left:30px;
+			opacity: 1;
+			transition:all .5s ease-in-out;
+		}
+		#odiv>div>img:nth-child(2){
+			width: 95px;
+			height: 204px;
+			position: absolute;
+			top: 130px;
+			left: 500px;
+			opacity: 1;
+            z-index:5;
+			transition:all .5s ease-in-out;
+
+		}
+		#odiv>div>span{
+			display: block;
+			width: 440px;
+			height: 350px;
+			top: 130px;
+			padding-left: 110px;
+			position:absolute;
+            right:50px;
+            opacity: 1;
+			transition:all .5s ease-in-out;
+		}
+		#left{
+			position: absolute;
+			width: 64px;
+			height: 64px;
+			background: url("../images/lbtn.png")center center;
+			z-index: 10;
+            top:260px;
+            left:120px;
+		}
+		#right{
+			position: absolute;
+			width: 64px;
+			height: 64px;
+			background: url("../images/rbtn.png")center center;
+			z-index: 10;
+			right: 120px;
+			top:260px;
+		}
+		.zuo{
+			display: block !important;
+			left: -1100px !important;
+			top: 0 !important;
+		}
+		.you{
+			display: block !important;
+			left: 1100px !important;
+			top:0 !important;
+		}
+		.show{
+			display: block !important;
+			top: 0 !important;
+			left: 0 !important;
+		}
+		#cancer{
+			position:absolute;
+			top:36px;
+			right:20px;
+			cursor:pointer;
+			transition: all .5s ease;
+			z-index:10;
+			font-size: 0;
+		}
+		#cancer:hover{
+            transform:rotate(180deg);
+		}
+		#act img:nth-child(1){
+			top:-50px !important;
+			opacity: 1 !important;
+
+		}
+		#act img:nth-child(2){
+			top:130px !important;
+			opacity: 1 !important;
+
+		}
+		#act>span{
+			top: 130px !important;
+			opacity: 1 !important;
+
+
+		}
+		#act2 img:nth-child(1){
+			top:650px !important;
+			opacity: 0 !important
+					}
+		#act2 img:nth-child(2){
+			top:-105px !important;
+			opacity: 0 !important;
+
+		}
+		#act2>span{
+			top: 650px !important;
+			opacity: 0 !important;
+
+		}
+		.I1{
+			top:-50px !important;
+			opacity: 1 !important;
+		}
+		.J1{
+			top:130px !important;
+			opacity: 1 !important;
+		}
+		.S1{
+			top: 130px !important;
+			opacity: 1 !important;
+
+		}
+		.I2{
+			top:600px !important;
+			opacity: 0 !important
+					}
+		.J2{
+			top:-105px !important;
+			opacity: 0 !important;
+
+		}
+		.S2{
+			top: -350px !important;
+			opacity: 0 !important;
+
+		}
+		.bg{
+			height : 0 !important;
+			margin-top: 300px !important;
+		}
+		.bg2{
+			height: 400px !important;
+			margin-top: 100px !important;
+		}

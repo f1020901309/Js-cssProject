@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>变形</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			background: #363636;
+		}
+		div{
+			margin: 0px auto;
+			width: 700px;
+			height: 700px;
+			background: #ccc;
+			transition: all 2s ease-in-out;
+		}
+		.yuan{
+			width: 700px;
+			height: 700px;
+			background: blue;
+			border-radius: 50%;
+			/* background: yellow; */
+
+		}
+		.zhengfang{
+			width: 700px;
+			height: 700px;
+			background: yellow;
+		}
+		.ping{
+			width: 700px;
+			height: 700px;
+			background: aqua;
+			transform: skew(35deg);
+			/* background: yellow; */
+		}
+		.ping2{
+			width: 700px;
+			height: 700px;
+			background: aqua;
+			transform: skew(-35deg);
+			/* background: yellow; */
+		}
+		.chang{
+			width: 700px;
+			height: 700px;
+			background: green;
+			/* background: yellow; */
+		}
+		.san{
+			width: 0;
+			height: 0;
+			border: 500px solid transparent;
+			border-bottom: 700px solid purple;
+			border-top-width: 0;
+			background: none;
+		}
+	</style>
+</head>
+<body>
+	<div id="con"></div>
+	<script>
+		var con=document.getElementById("con");
+		var i=0;
+		con.onclick=function(){
+				
+				switch(true){
+						case i%6==0:
+						con.className="yuan";
+						i++;
+						break;
+						case i%6==1:
+						con.className="zhengfang";
+						i++;
+						break;
+						case i%6==2:
+						con.className="san";
+						i++;
+						break;
+						case i%6==3:
+						con.className="chang";
+						i++;
+						break;
+						case i%6==4:
+						con.className="ping2";
+						i++;
+						break;
+						default:
+						con.className="ping";
+						i++;
+						break;
+						
+				}
+		}
+	</script>
+</body>
+</html>

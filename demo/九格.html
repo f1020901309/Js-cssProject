@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.main{
+			width: 690px;
+			height: 690px;
+			margin: 0 auto;
+			position: relative;
+		}
+		.box{
+			width: 200px;
+			height: 200px;
+			margin: 0 10px 10px 0;
+			position: absolute;
+			transition: all .2s ease-in-out;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+	</div>
+</body>
+<script>
+var box=document.getElementsByClassName("box");
+for(var i=0;i<box.length;i++){
+			box[i].style.top=Math.floor(i/3)*210+"px";
+			box[i].style.left=i%3*210+"px";//给每个块加定位
+			box[i].style.background="url(images/ss"+i+".jpg)";
+			box[i].style.backgroundSize="100% 100%";//给每个快加背景
+			box[i].onmouseover =function(){
+				this.style.transform="scale(1.5,1.5)";
+				this.style.zIndex="5";
+			}//移入放大
+			box[i].onmouseout =function(){
+				this.style.transform="scale(1,1)";
+				this.style.zIndex="0";
+			}//移出回缩
+		}
+</script>
+<!-- <script>
+		var box=document.getElementsByClassName("box");
+		or(var i=0;i<box.length;i++){
+		if (i<3){
+			box[i].style.top="0px";
+			box[i].style.left=i*210+"px";
+		}
+		else if(i<6){
+			box[i].style.top="210px";
+			box[i].style.left=(i-3)*210+"px";
+		}
+		else{
+			box[i].style.top="420px";
+			box[i].style.left=(i-6)*210+"px";
+		}
+		//通过判断给每个块加定位
+		//box[i].style.background="url(images/ss"+i+".jpg)";
+		box[i].style.backgroundSize="100% 100%";
+		//给每个快加背景
+		box[i].onmouseover =function(){
+			this.style.transform="scale(1.5,1.5)";
+			this.style.zIndex="5";
+		}
+		//移入放大
+		box[i].onmouseout =function(){
+			this.style.transform="scale(1,1)";
+			this.style.zIndex="0";
+		}
+		//移出回缩
+		}
+</script> -->
+</html>

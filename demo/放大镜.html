@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>放大镜</title>
+	<style>
+	*{
+		padding: 0;
+		margin: 0;
+	}
+		#main{
+			width: 405px;
+			height: 250px;
+			position: relative;
+			margin: 100px 200px;
+			/* border: 1px solid black; */
+			text-align: center；
+		}
+		#small{
+			width: 355px;
+			height: 200px;
+			position: absolute;
+			top: 25px;
+			left: 30px;
+		}
+		#small img{
+			width: 355px;
+			height: 200px;
+		}
+		#jing{
+			height: 100px;
+			width: 100px;
+			background: #ccc;
+			opacity: .5;
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			display: none;
+		}
+		#big{
+			width: 300px;
+			height: 300px;
+			position: absolute;
+			top: -50px;
+			right: -350px;
+			overflow: hidden;
+			display: none;
+		}
+		#bigimg{
+			width: 1065px;
+			height: 600px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+		.btn{
+			position: absolute;
+			bottom: -50px;
+			font-size: 20px;
+			left: 40%;
+		}
+		.btn button{
+			width: 30px;
+			height: 30px;
+			border-radius: 10px;
+			outline: 0;
+			/* background: #99f; */
+			line-height: 30px;
+			/* border-color: #99a; */
+		}
+	</style>
+</head>
+<body>
+	<div id="main">
+		<div id="small">
+			<img src="images/Jay.jpg" id="smallimg">
+			<div id="jing"></div>
+		</div>
+		<div id="big">
+			<img src="images/Jay.jpg" id="bigimg">
+		</div>
+		<div class="btn">
+		<button id="biger">+</button>
+		<button id="resize">-</button>
+		</div>
+	</div>
+	
+	<script>
+		function gbi(id){
+				return document.getElementById(id);
+		}
+		var main=gbi("main");
+		var small=gbi("small");
+		var big=gbi("big");
+		var jing=gbi("jing");
+		var bigimg=gbi("bigimg");
+		var smallimg=gbi("smallimg");
+		small.onmouseover=function(){
+			jing.style.display="block";
+			big.style.display="block";
+			//鼠标移动到small出现放大镜和放大图
+		}
+		small.onmouseout=function(){
+			jing.style.display="none";
+			big.style.display="none";
+			//鼠标离开small放大镜和放大图消失
+		}
+		small.onmousemove=function(shuzb){
+			var shuzbx=shuzb.pageX;
+			var shuzby=shuzb.pageY;
+			//获取鼠标坐标		境框宽度		离父级左边距
+			var jingx=shuzbx-jing.offsetWidth/2-main.offsetLeft-small.offsetLeft;
+			var jingy=shuzby-jing.offsetHeight/2-main.offsetTop-small.offsetTop;
+			//镜框离小图的左或上的距离
+			
+			var bili=bigimg.offsetWidth/small.offsetWidth;	
+			//计算大图移动比例
+			if(jingx<0){
+				jingx=0;
+			}
+			else if(jingx>small.offsetWidth-jing.offsetWidth){
+				jingx=small.offsetWidth-jing.offsetWidth;
+			}
+			if(jingy<0){
+				jingy=0;
+			}
+			else if(jingy>small.offsetHeight-jing.offsetHeight){
+				jingy=small.offsetHeight-jing.offsetHeig;
+			}
+			//判断超出处理
+			
+			var bigmovx=jingx*bili;
+			var bigmovy=jingy*bili;
+			//计算大图的位置
+
+			jing.style.left=jingx+"px";
+			jing.style.top=jingy+"px";
+			bigimg.style.left=-bigmovx+"px";
+			bigimg.style.top=-bigmovy+"px";
+			//输出位置参数
+		}
+	</script>
+	<script>
+		function gbi(id){
+				return document.getElementById(id);
+		}
+		var biger=gbi("biger");
+		var resize=gbi("resize");
+
+		biger.onclick=function(){
+			var jing=gbi("jing");
+			var bigimg=gbi("bigimg");
+			jing.style.width="50px";
+			jing.style.height="50px";
+			bigimg.style.width="2130px";
+			bigimg.style.height="1200px";
+		}
+		resize.onclick=function(){
+			var jing=gbi("jing");
+			var bigimg=gbi("bigimg");
+			jing.style.width="100px";
+			jing.style.height="100px";
+			bigimg.style.width="1065px";
+			bigimg.style.height="600px";
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+
+		.main{
+			width: 340px;	
+			margin: 50px auto;
+			text-align: center;
+			border: 2px solid #cca;
+			padding: 5px 2px;
+			border-radius: 5px;
+		}
+		input{
+			width: 330px;
+			padding: 0;
+			height: 30px;
+			outline: 0;
+			text-align: right;
+			font-size: 20px;
+		}
+		#topinp{	
+			border-bottom: none;
+		}
+		#botinp{
+			border-top: none;
+		}
+		.main button{
+			width: 80px;
+			height: 80px;
+			margin-top: 5px;
+		}
+		#clear{
+			width: 165px !important;
+		}
+		#deng{
+			width: 165px !important;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<input type="text" id="topinp">
+		<input type="text" id="botinp">
+		<button id="clear"  onclick="clearall(this)">Clear</button>
+		<button id="quyu" value="_%_" onclick="inputStr(this)">%</button>
+		<button id="jia" value="_/_" onclick="inputStr(this)">/</button>
+		<button id="7" value="7" onclick="inputStr(this)">7</button>
+		<button id="8" value="8" onclick="inputStr(this)">8</button>
+		<button id="9" value="9" onclick="inputStr(this)">9</button>
+		<button id="jian" value="_*_" onclick="inputStr(this)">*</button>
+		<button id="4" value="4" onclick="inputStr(this)">4</button>
+		<button id="5" value="5" onclick="inputStr(this)">5</button>
+		<button id="6" value="6" onclick="inputStr(this)">6</button>
+		<button id="cheng" value=" - " onclick="inputStr(this)">-</button>
+		<button id="1" value="1" onclick="inputStr(this)">1</button>
+		<button id="2" value="2" onclick="inputStr(this)">2</button>
+		<button id="3" value="3" onclick="inputStr(this)">3</button>
+		<button id="chu" value=" + " onclick="inputStr(this)">+</button>
+		<button id="0" value="0" onclick="inputStr(this)">0</button>
+		<button id="dian" value="." onclick="inputStr(this)">.</button>
+		<button id="deng" value="="  onclick="jisuan(this)">=</button>
+	</div>
+	<script>
+		function gbi(id){
+			return document.getElementById(id);
+			
+		}
+		var str="";
+		var deng=gbi("deng");
+		var clear=gbi("clear");
+		var topinp=gbi("topinp");
+		var botinp=gbi("botinp");
+		function inputStr(n){
+			str+=n.value;
+			topinp.value=tihuan(str);
+		}
+		function jisuan(){
+				botinp.value=disuan(str);
+							}
+		function clearall(){
+				botinp.value="";
+				topinp.value="";
+				str="";
+		}	
+
+		// str=tihuan(str);
+		function tihuan(str){
+			var strhuan=str;
+			for(var i=0;i<str.length;i++){
+				strhuan=strhuan.replace("_"," ");
+			}
+			return strhuan;
+		}
+
+
+
+		function gaosuan(str){
+			var str0=str.split("_");
+			var num=[];
+			var fu=[];
+			var sum=0;
+			if(str0.length<2){
+					return str0[0];
+				}
+			else{
+				for(var i=0;i<str0.length;i++){
+					if(i%2==0){
+						var s=i/2;
+						num[s]=str0[i];
+						}
+					else{
+						var m=(i-1)/2;
+						fu[m]=str0[i];
+						}
+					}			
+			for(var i=0;i<fu.length;i++){
+				if(fu[i]=="*"){
+					sum=Number(num[i])*Number(num[i+1]);
+					num[i+1]=sum;
+						}
+				else if(fu[i]=="/"){
+					sum=Number(num[i])/Number(num[i+1]);
+					num[i+1]=sum;
+						}
+				else{
+					sum=Number(num[i])%Number(num[i+1]);
+					num[i+1]=sum;
+						}
+					}
+				 	return sum;
+				}
+		}
+		function disuan(str){
+
+			var str0=str.split(" ");
+			var num=[];
+			var fu=[];
+			var sum=0;
+			for(var i=0;i<str0.length;i++){
+				if(i%2==0){
+					var s=i/2;
+					num[s]=gaosuan(str0[i]);
+				}
+				else{
+					var m=(i-1)/2;
+					fu[m]=str0[i];
+				}
+			}
+			if(fu.length<1){
+				sum=num[0];
+			}
+			else{
+				for(var i=0;i<fu.length;i++){
+					if(fu[i]=="+"){
+						sum=Number(num[i])+Number(num[i+1]);
+						num[i+1]=sum;
+					}
+					else{
+						sum=Number(num[i])-Number(num[i+1]);
+						num[i+1]=sum;
+					}
+				}
+			}
+
+			return sum;
+		}
+						
+
+	</script>
+</body>
+</html>

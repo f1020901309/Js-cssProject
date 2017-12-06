@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>canvas尝试</title>
+<style>
+	body{
+		font-size: 0;
+	}
+	img{
+		display: none;
+	}
+	#myCanvas{
+		border: none;
+		transition: all 1s ease-in-out ;
+	}
+	#myCanvas2{
+		border: none;
+		transition: all 1s ease-in-out .1s;
+	}
+	#myCanvas3{
+		border: none;
+		transition: all 1s ease-in-out .2s;
+	}
+	#myCanvas4{
+		border: none;
+		transition: all 1s ease-in-out .3s;
+	}
+	#myCanvas5{
+		border: none;
+		transition: all 1s ease-in-out .4s;
+	}
+	/* img{
+		width: 1000px;
+		height: 600px;
+	} */
+	body:hover canvas{
+		transform: rotate(180deg);
+		opacity: 0;
+	}
+</style>
+</head>
+<body>
+
+<p>图片应用:</p>
+<img id="scream" src="images/aaa.jpg">
+<p>画布:</p>
+<canvas id="myCanvas" width="240" height="740" >
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<canvas id="myCanvas2" width="240" height="740" >
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<canvas id="myCanvas3" width="240" height="740" >
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<canvas id="myCanvas4" width="240" height="740" >
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<canvas id="myCanvas5" width="150" height="740" >
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<script>
+document.getElementById("scream").onload=function()
+{
+	var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+    var img=document.getElementById("scream");
+
+
+
+    ctx.drawImage(img,0,0,300,768,0,0,240,740);
+    var c2=document.getElementById("myCanvas2");
+    var ctx2=c2.getContext("2d");
+    ctx2.drawImage(img,300,0,300,768,0,0,240,740);
+    var c3=document.getElementById("myCanvas3");
+    var ctx3=c3.getContext("2d");
+    ctx3.drawImage(img,600,0,300,768,0,0,240,740);
+    var c4=document.getElementById("myCanvas4");
+    var ctx4=c4.getContext("2d");
+    ctx4.drawImage(img,900,0,300,768,0,0,240,740);
+    var c5=document.getElementById("myCanvas5");
+    var ctx5=c5.getContext("2d");
+    ctx5.drawImage(img,1200,0,166,768,0,0,150,740);
+}
+</script>
+
+</body>
+</html>

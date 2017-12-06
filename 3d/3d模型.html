@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3d2</title>
+    <style>
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background: black;
+    }
+
+    .outside {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin: 200px auto;
+        transform-style: preserve-3d;
+        animation: xuanzhuan 6s linear infinite;
+    }
+
+    .outside>div {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        transition: all 2s ease-in-out;
+    }
+
+    .outside-1 {
+        transform: translateZ(100px);
+        background: url(images/111.jpg);
+        background-size: 100% 100%;
+    }
+
+    .outside-2 {
+        transform: rotateX(90deg) translateZ(100px);
+        background: url(images/222.jpg);
+        background-size: 100% 100%;
+    }
+
+    .outside-3 {
+        transform: rotateX(270deg) translateZ(100px);
+        background: url(images/333.jpg);
+        background-size: 100% 100%;
+    }
+
+    .outside-4 {
+        transform: rotateY(90deg) translateZ(100px);
+        background: url(images/444.jpg);
+        background-size: 100% 100%;
+    }
+
+    .outside-5 {
+        transform: rotateY(270deg) translateZ(100px);
+        background: url(images/555.jpg);
+        background-size: 100% 100%;
+    }
+
+    .outside-6 {
+        transform: translateZ(-100px);
+        background: url(images/666.jpg);
+        background-size: 100% 100%;
+    }
+
+    .inside {
+        height: 150px;
+        width: 150px;
+        margin: 25px;
+        position: relative;
+        transform-style: preserve-3d;
+    }
+
+    .inside>div {
+        width: 150px;
+        height: 150px;
+        position: absolute;
+    }
+
+    .inside-1 {
+        transform: translateZ(75px);
+        background: url(images/111.jpg);
+        background-size: 100% 100%;
+    }
+
+    .inside-2 {
+        transform: rotateX(90deg) translateZ(75px);
+        background: url(images/222.jpg);
+        background-size: 100% 100%;
+    }
+
+    .inside-3 {
+        transform: rotateX(270deg) translateZ(75px);
+        background: url(images/333.jpg);
+        background-size: 100% 100%;
+    }
+
+    .inside-4 {
+        transform: rotateY(90deg) translateZ(75px);
+        background: url(images/444.jpg);
+        background-size: 100% 100%;
+    }
+
+    .inside-5 {
+        transform: rotateY(270deg) translateZ(75px);
+        background: url(images/555.jpg);
+        background-size: 100% 100%;
+    }
+
+    .inside-6 {
+        transform: translateZ(-75px);
+        background: url(images/666.jpg);
+        background-size: 100% 100%;
+    }
+ 
+    .outside:hover .outside-1 {
+        transform: scale3d(2, 1.5, 1.5) translateZ(300px);
+        opacity: .5;
+    }
+
+    .outside:hover .outside-2 {
+        transform: scale3d(2, 1.5, 2) rotateX(90deg) translateZ(180px);
+        opacity: .5;
+        border-radius: 50%;
+    }
+
+    .outside:hover .outside-3 {
+        transform: scale3d(2, 1.5, 2) rotateX(270deg) translateZ(180px);
+        opacity: .5;
+        border-radius: 50%;
+    }
+
+    .outside:hover .outside-4 {
+        transform: scale3d(1.5, 1.5, 2) rotateY(90deg) translateZ(300px);
+        opacity: .5;
+    }
+
+    .outside:hover .outside-5 {
+        transform: scale3d(1.5, 1.5, 2) rotateY(270deg) translateZ(300px);
+        opacity: .5;
+    }
+
+    .outside:hover .outside-6 {
+        transform: scale3d(2, 1.5, 1.5) translateZ(-300px);
+        opacity: .5;
+    }
+
+    @keyframes xuanzhuan {
+        0% {
+            transform: rotateX(-30deg) rotateY(0deg) rotateZ(0deg);
+        }
+        100% {
+            transform: rotateX(-30deg) rotateY(360deg) rotateZ(0deg);
+        }
+    }
+    </style>
+</head>
+
+<body>
+    <div class="outside">
+        <div class="outside-1"></div>
+        <div class="outside-2"></div>
+        <div class="outside-3"></div>
+        <div class="outside-4"></div>
+        <div class="outside-5"></div>
+        <div class="outside-6"></div>
+        <div class="inside">
+            <div class="inside-1"></div>
+            <div class="inside-2"></div>
+            <div class="inside-3"></div>
+            <div class="inside-4"></div>
+            <div class="inside-5"></div>
+            <div class="inside-6"></div>
+        </div>
+    </div>
+</body>
+
+</html>

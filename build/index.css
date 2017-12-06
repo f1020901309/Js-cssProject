@@ -1,0 +1,279 @@
+* {
+    padding: 0;
+    margin: 0;
+    color:#fff;
+}
+
+body {
+    // background: url('images/backgroud.jpg');
+    background: #1A1A1A;
+    background-size: 100% 100%;
+    background-attachment:fixed;
+    overflow: hidden;
+}
+.title h1 {
+	 margin-top: 20px;
+    text-align: right;
+    padding-right: 360px;
+    animation: bounce 5s ease-in-out infinite .1s; 
+}
+.title p{
+    padding-right: 230px;
+    text-align: right;
+    animation: bounceInRight .6s ease-in-out both; 
+}
+
+#main ul li {
+    list-style: none;
+    text-align: right;
+    border-top: 1px solid #fff;
+    // border-top-left-radius: 200px; 
+    // border-bottom-right-radius: 30px; 
+    margin-top: 20px;
+    padding-right: 30px;
+    transition:all .6s ease-in-out;
+    box-sizing: border-box;
+    opacity: 0;
+    position: relative;
+}
+#main ul a li div{
+    position: absolute;
+    border-radius: 5px;
+    display: none;
+    // border:10px solid rgba(256,256,256,.2);
+    // border-top: none;
+}
+
+#main ul a:nth-child(1) li{
+    animation:bounceInLeft .6s ease-in-out both ;   
+}
+#main ul a:nth-child(2) li{
+    animation:bounceInLeft .6s ease-in-out both .2s;
+}
+#main ul a:nth-child(3) li{
+    animation:bounceInLeft .6s ease-in-out both .4s;
+}
+#main ul a:nth-child(4) li{
+    animation:bounceInLeft .6s ease-in-out both .6s;
+}
+#main ul a:nth-child(5) li{
+    animation:bounceInLeft .6s ease-in-out both .8s;
+}
+
+#main ul a:nth-child(1) li div{
+    top: 100%;
+    right:6%;
+    background: url(images/baidu.jpg) no-repeat;
+    background-size: 100% 100%;
+    width: 500px;
+    height: 265px;
+}
+#main ul a:nth-child(2) li div{
+    top: 100%;
+    right:3%;
+    background: url(images/mhxy.jpg) no-repeat;
+    background-size: 100% 100%;
+    width: 500px;
+    height: 265px;
+}
+#main li .cat{
+    bottom: 100%;
+    right:26%;
+    background: url(images/cat.jpg) no-repeat;
+    background-size: 100% 100%;
+    width: 300px;
+    height: 159px;
+}
+#main li .cathover{
+    top: 100%;
+    right:3%;
+    background: url(images/catHover.jpg) no-repeat;
+    background-size: 100% 100%;
+    width: 300px;
+    height: 159px;
+}
+#main ul a:nth-child(4) li div{
+    bottom: 100%;
+    right:10%;
+    background: url(images/douban.jpg) no-repeat;
+    background-size: 100% 100%;
+    width: 500px;
+    height: 265px;
+}
+#main ul a:nth-child(5) li div{
+    bottom: 100%;
+    right:3%;
+    background: url(images/elephent.jpg) no-repeat;
+    background-size: 100% 100%;
+    width: 500px;
+    height: 265px;
+}
+// #main ul a:nth-child(5) li{
+//     animation:bounceInLeft .6s ease-in-out both .8s;
+// }
+#main i{
+	font-style: normal;
+	font-size: 30px;
+	// color: #fff;
+}
+a {
+    text-decoration: none;
+}
+#main ul li:hover{
+  	width: 100% !important;
+  	padding-right: 100px;
+    // border-right: 1px solid #fff;
+    // border-bottom: 1px solid #fff;
+    border-radius: 0px; 
+    // border-top-left-radius: 140px; 
+    //  border-bottom-right-radius: 40px; 
+    // border-bottom-left-radius: 40px; 
+    background: rgba(256,256,256,.2)
+}
+#main ul li:hover div{
+    display: block;
+    animation:bounceInRight .6s ease-in-out both .2s;
+}
+#main ul li:hover .cat{
+    display: block;
+    animation:bounceInDown .6s ease-in-out both ;
+}
+#main ul li:hover .cathover{
+    display: block;
+    animation:bounceInUp .6s ease-in-out both ;
+}
+@keyframes bounce {
+  from, 4%, 10.6%, 16%, 20% {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    transform: translate3d(0,0,0);
+  }
+
+  8%, 8.3% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -30px, 0);
+  }
+
+  14% {
+    animation-timing-function: cubic-bezier(0.755, 0.050, 0.855, 0.060);
+    transform: translate3d(0, -15px, 0);
+  }
+
+  18% {
+    transform: translate3d(0,-4px,0);
+  }
+  to{
+    transform: translate3d(0,0,0);
+  }
+}
+@keyframes bounceInLeft {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(5px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes bounceInRight {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(3000px, 0, 0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(-25px, 0, 0);
+  }
+
+  75% {
+    transform: translate3d(10px, 0, 0);
+  }
+
+  90% {
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes bounceInUp {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0,3000px,  0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0,-25px,  0);
+  }
+
+  75% {
+    transform: translate3d(0,10px,  0);
+  }
+
+  90% {
+    transform: translate3d(0,-5px,  0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes bounceInDown {
+  from, 60%, 75%, 90%, to {
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+
+  0% {
+    opacity: 0;
+    transform: translate3d(0,-3000px,  0);
+  }
+
+  60% {
+    opacity: 1;
+    transform: translate3d(0,25px, 0);
+  }
+
+  75% {
+    transform: translate3d(0,-10px,  0);
+  }
+
+  90% {
+    transform: translate3d(0,5px,  0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

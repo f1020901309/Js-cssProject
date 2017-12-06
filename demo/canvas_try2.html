@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>canvasttry</title>
+<style>
+body{
+	font-size: 0;
+}
+img{
+	display: none;
+}
+div{
+	width: 960px;
+	transform-style: preserve-3d;
+	background: url('images/akali.jpg')
+}
+	canvas{
+		transition: all .6s ease-in-out ;
+	}
+	div:hover #myCanvas{
+		transform:translateX(-100px) translateY(-100px) translateZ(1000px)translateZ(100px) rotateX(-50deg) rotateY(55deg) rotateZ(-180deg) scaleX(1.5) scaleY(1.5) scaleZ(1.5);
+		opacity: 0;
+	}
+	div:hover #myCanvas2{
+		transform:translateX(-50px) translateY(-100px) translateZ(1000px) rotateX(63deg) rotateY(-12deg) rotateZ(90deg) scaleX(1.5) scaleY(1.5) scaleZ(1.5);
+		opacity: 0;
+	}
+	div:hover #myCanvas3{
+		transform:translateX(50px) translateY(-100px) translateZ(1000px) rotateX(12deg) rotateY(70deg) rotateZ(-40deg) scaleX(1.5) scaleY(1.5) scaleZ(1.5);
+		opacity: 0;
+	}
+	div:hover #myCanvas4{
+		transform:translateX(100px) translateY(-100px) translateZ(1000px) rotateX(84deg) rotateY(-60deg) rotateZ(15deg) scaleX(1.5) scaleY(1.5) scaleZ(1.5);
+		opacity: 0;
+	}
+	div:hover #myCanvas5{
+		transform:translateX(-100px) translateY(100px) translateZ(1000px) rotateX(100deg) rotateY(-30deg) rotateZ(60deg) scaleX(1.5) scaleY(1.5) scaleZ(1.5);
+		opacity: 0;
+	}
+	div:hover #myCanvas6{
+		transform:translateX(-50px) translateY(100px) translateZ(1000px) rotateX(-50deg) rotateY(99deg) rotateZ(78deg) scaleX(1.5) scaleY(1.5) scaleZ(1.5);
+		opacity: 0;
+	}
+	div:hover #myCanvas7{
+		transform:translateX(50px) translateY(100px) translateZ(1000px) rotateX(-90deg) rotateY(-120deg) rotateZ(36deg) scaleX(1.5) scaleY(1.5) scaleZ(1.5);
+		opacity: 0;
+	}
+	div:hover #myCanvas8{
+		transform:translateX(100px) translateY(100px) translateZ(1000px) rotateX(114deg) rotateY(31deg) rotateZ(50deg) scaleX(1.5) scaleY(1.5) scaleZ(1.5);
+		opacity: 0;
+	}
+
+</style>
+</head>
+<body>
+
+<img id="scream" src="images/aaa.jpg">
+<div>
+<canvas id="myCanvas" width="240" height="360" >
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<canvas id="myCanvas2" width="240" height="360" >
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<canvas id="myCanvas3" width="240" height="360" >
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<canvas id="myCanvas4" width="240" height="360" >
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<canvas id="myCanvas5" width="240" height="360" >
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<canvas id="myCanvas6" width="240" height="360" >
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<canvas id="myCanvas7" width="240" height="360" >
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<canvas id="myCanvas8" width="240" height="360" >
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+</div>
+<script>
+document.getElementById("scream").onload=function()
+{
+	var c=document.getElementById("myCanvas");
+    var ctx=c.getContext("2d");
+    var img=document.getElementById("scream");
+    ctx.drawImage(img,0,0,300,384,0,0,240,360);
+
+    var c2=document.getElementById("myCanvas2");
+    var ctx2=c2.getContext("2d");
+    ctx2.drawImage(img,300,0,300,384,0,0,240,360);
+    var c3=document.getElementById("myCanvas3");
+    var ctx3=c3.getContext("2d");
+    ctx3.drawImage(img,600,0,300,384,0,0,240,360);
+    var c4=document.getElementById("myCanvas4");
+    var ctx4=c4.getContext("2d");
+    ctx4.drawImage(img,900,0,300,384,0,0,240,360);
+
+    var c5=document.getElementById("myCanvas5");
+    var ctx5=c5.getContext("2d");
+    ctx5.drawImage(img,0,384,300,384,0,0,240,360);
+    var c6=document.getElementById("myCanvas6");
+    var ctx6=c6.getContext("2d");
+    ctx6.drawImage(img,300,384,300,384,0,0,240,360);
+    var c7=document.getElementById("myCanvas7");
+    var ctx7=c7.getContext("2d");
+    ctx7.drawImage(img,600,384,300,384,0,0,240,360);
+    var c8=document.getElementById("myCanvas8");
+    var ctx8=c8.getContext("2d");
+    ctx8.drawImage(img,900,384,300,384,0,0,240,360);
+}
+</script>
+
+</body>
+</html>
